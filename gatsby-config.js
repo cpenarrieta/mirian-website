@@ -256,6 +256,6 @@ module.exports = {
         include: /svg-icons/
       }
     },
-    'gatsby-plugin-netlify'
+    `gatsby-plugin-netlify-cms`
   ]
 };

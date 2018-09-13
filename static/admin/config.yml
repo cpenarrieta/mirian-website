@@ -1,14 +1,13 @@
 backend:
-  name: git-gateway
-  branch: master
+  name: test-repo
 
-media_folder: static/img
-public_folder: /img
+media_folder: static/assets
+public_folder: assets
 
 collections:
-  - name: "blog"
-    label: "Blog"
-    folder: "content/posts"
+  - name: blog
+    label: Blog
+    folder: src/posts
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
