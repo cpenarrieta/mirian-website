@@ -38,6 +38,8 @@ class IndexPage extends React.Component {
       mobile
     };
 
+    // console.log(`11111111111111`);
+
     return (
       <React.Fragment>
         <ThemeContext.Consumer>

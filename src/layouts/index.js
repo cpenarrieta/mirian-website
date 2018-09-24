@@ -81,6 +81,8 @@ class Layout extends React.Component {
       pages: { edges: pages }
     } = data;
 
+    // console.log('22222', children)
+
     return (
       <ThemeContext.Provider value={this.state.theme}>
         <FontLoadedContext.Provider value={this.state.font400loaded}>

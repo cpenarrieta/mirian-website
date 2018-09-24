@@ -58,6 +58,11 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           }
         `
       ).then(result => {
+        console.log('111111111111---11111111')
+        // console.log(result.data.allMarkdownRemark.edges)
+
+        result.data.allMarkdownRemark.edges.forEach(r => console.log(r.node.fields))
+
         if (result.errors) {
           console.log(result.errors);
           reject(result.errors);
@@ -94,6 +99,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         // Create posts
         const posts = items.filter(item => /posts/.test(item.node.id));
         posts.forEach(({ node }, index) => {
+          // console.log(node.frontmatter)
           const slug = node.fields.slug;
           const next = index === 0 ? undefined : posts[index - 1].node;
           const prev = index === posts.length - 1 ? undefined : posts[index + 1].node;
