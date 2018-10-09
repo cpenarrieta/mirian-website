@@ -4,34 +4,21 @@ import React from "react";
 require("core-js/fn/array/find");
 
 import Article from "../components/Article";
-import Search from "../components/Search";
 import { ThemeContext } from "../layouts";
 import Seo from "../components/Seo";
-
-import AlgoliaIcon from "!svg-react-loader!../images/svg-icons/search-by-algolia.svg?name=AlgoliaLogo";
 
 const SearchPage = props => {
   const {
     data: {
       site: {
-        siteMetadata: { algolia, facebook }
+        siteMetadata: { facebook }
       }
     }
   } = props;
 
   return (
     <React.Fragment>
-      <ThemeContext.Consumer>
-        {theme => (
-          <Article theme={theme}>
-            <div className="icon">
-              <AlgoliaIcon />
-            </div>
-
-            <Search algolia={algolia} theme={theme} />
-          </Article>
-        )}
-      </ThemeContext.Consumer>
+      <ThemeContext.Consumer>{theme => <Article theme={theme} />}</ThemeContext.Consumer>
 
       <Seo facebook={facebook} />
 
@@ -61,11 +48,6 @@ export const query = graphql`
   query SearchQuery {
     site {
       siteMetadata {
-        algolia {
-          appId
-          searchOnlyApiKey
-          indexName
-        }
         facebook {
           appId
         }
