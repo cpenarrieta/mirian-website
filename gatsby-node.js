@@ -1,5 +1,6 @@
 //const webpack = require("webpack");
 const _ = require("lodash");
+const moment = require("moment");
 const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 const path = require("path");
 const Promise = require("bluebird");
@@ -21,6 +22,14 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
       node,
       name: `prefix`,
       value: separtorIndex ? slug.substring(1, separtorIndex) : ""
+    });
+  }
+  if (node.internal.type === `MarkdownRemark` && node.frontmatter && node.frontmatter.date) {
+    const momentValue = moment(node.frontmatter ? node.frontmatter.date : "");
+    createNodeField({
+      node,
+      name: `date`,
+      value: momentValue.format("YYYY-MM-DD")
     });
   }
 };
@@ -51,6 +60,8 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
                   frontmatter {
                     title
                     category
+                    date
+                    tags
                   }
                 }
               }
@@ -58,11 +69,6 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           }
         `
       ).then(result => {
-        console.log('111111111111---11111111')
-        // console.log(result.data.allMarkdownRemark.edges)
-
-        result.data.allMarkdownRemark.edges.forEach(r => console.log(r.node.fields))
-
         if (result.errors) {
           console.log(result.errors);
           reject(result.errors);
@@ -99,7 +105,6 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         // Create posts
         const posts = items.filter(item => /posts/.test(item.node.id));
         posts.forEach(({ node }, index) => {
-          // console.log(node.frontmatter)
           const slug = node.fields.slug;
           const next = index === 0 ? undefined : posts[index - 1].node;
           const prev = index === posts.length - 1 ? undefined : posts[index + 1].node;

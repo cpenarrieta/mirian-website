@@ -38,8 +38,6 @@ class IndexPage extends React.Component {
       mobile
     };
 
-    // console.log(`11111111111111`);
-
     return (
       <React.Fragment>
         <ThemeContext.Consumer>
@@ -77,7 +75,7 @@ export default IndexPage;
 export const guery = graphql`
   query IndexQuery {
     posts: allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "//posts/[0-9]+.*--/" } }
+      filter: { fileAbsolutePath: { regex: "//src/posts/" } }
       sort: { fields: [fields___prefix], order: DESC }
     ) {
       edges {
@@ -86,20 +84,14 @@ export const guery = graphql`
           fields {
             slug
             prefix
+            date
           }
           frontmatter {
             title
             category
             author
-            cover {
-              children {
-                ... on ImageSharp {
-                  sizes(maxWidth: 800, maxHeight: 360) {
-                    ...GatsbyImageSharpSizes_withWebp
-                  }
-                }
-              }
-            }
+            hero
+            date
           }
         }
       }

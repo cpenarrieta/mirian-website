@@ -2,7 +2,6 @@ import FaArrowRight from "react-icons/lib/fa/arrow-right";
 import FaCalendar from "react-icons/lib/fa/calendar";
 import FaTag from "react-icons/lib/fa/tag";
 import FaUser from "react-icons/lib/fa/user";
-import Img from "gatsby-image";
 import Link from "gatsby-link";
 import PropTypes from "prop-types";
 import React from "react";
@@ -12,15 +11,8 @@ const Item = props => {
     theme,
     post: {
       excerpt,
-      fields: { slug, prefix },
-      frontmatter: {
-        title,
-        category,
-        author,
-        cover: {
-          children: [{ sizes }]
-        }
-      }
+      fields: { slug, date },
+      frontmatter: { title, category, author, hero }
     }
   } = props;
 
@@ -28,13 +20,22 @@ const Item = props => {
     <React.Fragment>
       <li>
         <Link to={slug} key={slug} className="link">
-          <Img sizes={sizes} />
+          <div className="gatsby-image-outer-wrapper">
+            <div className="gatsby-image-wrapper">
+              <div style={{ width: "100%", paddingBottom: "45%" }} />
+              <picture>
+                <source type="image/webp" sizes="(max-width: 800px) 100vw, 800px" />
+                <img className="test-img" />
+                <img className="hero-image" src={hero} />
+              </picture>
+            </div>
+          </div>
           <h1>
             {title} <FaArrowRight className="arrow" />
           </h1>
           <p className="meta">
             <span>
-              <FaCalendar size={18} /> {prefix}
+              <FaCalendar size={18} /> {date}
             </span>
             <span>
               <FaUser size={18} /> {author}
@@ -64,6 +65,45 @@ const Item = props => {
           position: relative;
           transition: all ${theme.time.duration.default};
           background: transparent;
+          border: 1px solid ${theme.line.color};
+          box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.03);
+
+          &:after {
+            bottom: ${`calc(${theme.space.default} * -2.5)`};
+          }
+          :global(.gatsby-image-wrapper) {
+            transform: scale(1);
+          }
+          h1 {
+            color: ${theme.blog.h1.hoverColor};
+          }
+          :global(.arrow) {
+            opacity: 1;
+          }
+
+          .hero-image {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+            opacity: 1;
+            transition: opacity 0.5s ease 0s;
+          }
+
+          .test-img {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+            opacity: 0;
+            transition: opacity 0.5s ease 0.5s;
+          }
 
           :global(.gatsby-image-outer-wrapper) {
             border-radius: ${theme.size.radius.default};
@@ -196,6 +236,22 @@ const Item = props => {
             padding: ${`0 calc(${theme.space.default} * 2)`};
           }
           li {
+            border: 1px solid ${theme.line.color};
+            box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.03);
+
+            &:after {
+              bottom: ${`calc(${theme.space.default} * -2.5)`};
+            }
+            :global(.gatsby-image-wrapper) {
+              transform: scale(1);
+            }
+            h1 {
+              color: ${theme.blog.h1.hoverColor};
+            }
+            :global(.arrow) {
+              opacity: 1;
+            }
+
             &:hover {
               border: 1px solid ${theme.line.color};
               box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.03);

@@ -11,7 +11,7 @@ module.exports = {
   authorTwitterAccount: "cpenarrieta",
   // info
   headerTitle: "Mirian Oria",
-  headerSubTitle: "Hola soy Mirian Oria",
+  headerSubTitle: "Bienvenidos a mi Blog",
   // manifest.json
   manifestName: "Mirian Oria Blog",
   manifestShortName: "MirianOria", // max 12 characters

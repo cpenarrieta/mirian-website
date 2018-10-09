@@ -90,6 +90,13 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `imgAssets`,
+        path: `${__dirname}/static/assets/`
+      }
+    },
+    {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
@@ -211,8 +218,6 @@ module.exports = {
           {
             serialize: ({ query: { site, allMarkdownRemark } }) => {
               return allMarkdownRemark.edges.map(edge => {
-                console.log('2222222222---2222222')
-                console.log(edge)
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.excerpt,
                   url: site.siteMetadata.siteUrl + edge.node.fields.slug,
@@ -238,6 +243,7 @@ module.exports = {
                       }
                       frontmatter {
                         title
+                        date
                       }
                     }
                   }

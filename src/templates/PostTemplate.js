@@ -58,18 +58,14 @@ export const postQuery = graphql`
       fields {
         slug
         prefix
+        date
       }
       frontmatter {
         title
         author
         category
-        cover {
-          childImageSharp {
-            resize(width: 300) {
-              src
-            }
-          }
-        }
+        hero
+        date
       }
     }
     authornote: markdownRemark(id: { regex: "/author/" }) {
