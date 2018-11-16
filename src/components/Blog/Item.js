@@ -11,8 +11,8 @@ const Item = props => {
     theme,
     post: {
       excerpt,
-      fields: { slug, date },
-      frontmatter: { title, category, author, hero }
+      fields: { slug, date, author },
+      frontmatter: { title, category }
     }
   } = props;
 
@@ -26,7 +26,7 @@ const Item = props => {
               <picture>
                 <source type="image/webp" sizes="(max-width: 800px) 100vw, 800px" />
                 <img className="test-img" />
-                <img className="hero-image" src={hero} />
+                <img className="hero-image" src={`/assets/${date}.png`} />
               </picture>
             </div>
           </div>

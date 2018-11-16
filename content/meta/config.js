@@ -7,8 +7,8 @@ module.exports = {
   siteImage: "preview.jpg",
   siteLanguage: "es",
   // author
-  authorName: "Cristian Penarrieta",
-  authorTwitterAccount: "cpenarrieta",
+  authorName: "Mirian Oria",
+  authorTwitterAccount: "mirian_or",
   // info
   headerTitle: "Mirian Oria",
   headerSubTitle: "Bienvenidos a mi Blog",

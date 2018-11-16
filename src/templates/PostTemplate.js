@@ -59,12 +59,11 @@ export const postQuery = graphql`
         slug
         prefix
         date
+        author
       }
       frontmatter {
         title
-        author
         category
-        hero
         date
       }
     }

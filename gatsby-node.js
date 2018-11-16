@@ -23,6 +23,11 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
       name: `prefix`,
       value: separtorIndex ? slug.substring(1, separtorIndex) : ""
     });
+    createNodeField({
+      node,
+      name: `author`,
+      value: "Mirian Oria"
+    });
   }
   if (node.internal.type === `MarkdownRemark` && node.frontmatter && node.frontmatter.date) {
     const momentValue = moment(node.frontmatter ? node.frontmatter.date : "");

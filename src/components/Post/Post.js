@@ -23,8 +23,8 @@ const Post = props => {
     post,
     post: {
       html,
-      fields: { slug, date },
-      frontmatter: { title, author, category }
+      fields: { slug, date, author },
+      frontmatter: { title, category }
     },
     authornote,
     facebook,
@@ -39,6 +39,7 @@ const Post = props => {
         <Headline title={title} theme={theme} />
         <Meta prefix={date} author={author} category={category} theme={theme} />
       </header>
+      <img className="main-image" src={`/assets/${date}.png`} />
       <Bodytext html={html} theme={theme} />
       <footer>
         <Share post={post} theme={theme} />
@@ -46,6 +47,13 @@ const Post = props => {
         <NextPrev next={nextPost} prev={prevPost} theme={theme} />
         <Comments slug={slug} facebook={facebook} theme={theme} />
       </footer>
+
+      <style jsx>{`
+        .main-image {
+          width: 100%;
+          margin-bottom: 20px;
+        }
+      `}</style>
     </React.Fragment>
   );
 };

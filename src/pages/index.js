@@ -85,12 +85,11 @@ export const guery = graphql`
             slug
             prefix
             date
+            author
           }
           frontmatter {
             title
             category
-            author
-            hero
             date
           }
         }

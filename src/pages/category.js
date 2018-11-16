@@ -95,11 +95,11 @@ export const guery = graphql`
           fields {
             slug
             prefix
+            author
           }
           frontmatter {
             title
             category
-            author
           }
         }
       }
