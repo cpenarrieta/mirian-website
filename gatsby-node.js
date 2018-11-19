@@ -30,7 +30,11 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
     });
   }
   if (node.internal.type === `MarkdownRemark` && node.frontmatter && node.frontmatter.date) {
+    console.log("---");
+    console.log(node.frontmatter.date);
     const momentValue = moment(node.frontmatter ? node.frontmatter.date : "");
+    console.log(momentValue);
+    console.log(momentValue.format("YYYY-MM-DD"))
     createNodeField({
       node,
       name: `date`,
