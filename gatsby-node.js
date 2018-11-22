@@ -1,6 +1,5 @@
 //const webpack = require("webpack");
 const _ = require("lodash");
-const moment = require("moment");
 const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 const path = require("path");
 const Promise = require("bluebird");
@@ -30,15 +29,10 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
     });
   }
   if (node.internal.type === `MarkdownRemark` && node.frontmatter && node.frontmatter.date) {
-    console.log("---");
-    console.log(node.frontmatter.date);
-    const momentValue = moment(node.frontmatter ? node.frontmatter.date : "");
-    console.log(momentValue);
-    console.log(momentValue.format("YYYY-MM-DD"))
     createNodeField({
       node,
       name: `date`,
-      value: momentValue.format("YYYY-MM-DD")
+      value: node.frontmatter.date.slice(0, 10)
     });
   }
 };
