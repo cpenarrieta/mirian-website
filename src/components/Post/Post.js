@@ -39,7 +39,7 @@ const Post = props => {
         <Headline title={title} theme={theme} />
         <Meta prefix={date} author={author} category={category} theme={theme} />
       </header>
-      <img className="main-image" src={`/assets/${date}.png`} />
+      <img className="main-image" src={`/assets/${date}.jpeg`} />
       <Bodytext html={html} theme={theme} />
       <footer>
         <Share post={post} theme={theme} />

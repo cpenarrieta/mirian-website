@@ -26,7 +26,7 @@ const Item = props => {
               <picture>
                 <source type="image/webp" sizes="(max-width: 800px) 100vw, 800px" />
                 <img className="test-img" />
-                <img className="hero-image" src={`/assets/${date}.png`} />
+                <img className="hero-image" src={`/assets/${date}.jpeg`} />
               </picture>
             </div>
           </div>

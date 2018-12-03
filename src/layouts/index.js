@@ -159,7 +159,7 @@ export const postQuery = graphql`
   query LayoutQuery {
     pages: allMarkdownRemark(
       filter: { id: { regex: "//pages//" }, fields: { prefix: { regex: "/^\\d+$/" } } }
-      sort: { fields: [fields___prefix], order: ASC }
+      sort: { fields: [frontmatter___date], order: ASC }
     ) {
       edges {
         node {
