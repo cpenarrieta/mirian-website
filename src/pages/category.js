@@ -87,7 +87,7 @@ export const guery = graphql`
   query PostsQuery {
     posts: allMarkdownRemark(
       filter: { fileAbsolutePath: { regex: "//src/posts/" } }
-      sort: { fields: [frontmatter___date], order: ASC }
+      sort: { fields: [frontmatter___date], order: DESC }
     ) {
       edges {
         node {

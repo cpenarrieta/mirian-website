@@ -50,7 +50,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           {
             allMarkdownRemark(
               filter: { id: { regex: "//posts|pages//" } }
-              sort: { fields: [frontmatter___date], order: ASC }
+              sort: { fields: [frontmatter___date], order: DESC }
               limit: 1000
             ) {
               edges {
