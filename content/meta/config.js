@@ -2,9 +2,9 @@ module.exports = {
   siteTitle: "Mirian Oria", // <title>
   shortSiteTitle: "Mirian Oria Blog", // <title> ending for posts and pages
   siteDescription: "Blog de Mirian Oria",
-  siteUrl: "https://gatsby-starter-hero-blog.greglobinski.com",
+  siteUrl: "https://www.mombrokencode.com/",
   pathPrefix: "",
-  siteImage: "preview.jpg",
+  siteImage: "2018-11-06.jpeg",
   siteLanguage: "es",
   // author
   authorName: "Mirian Oria",
