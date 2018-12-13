@@ -3,19 +3,29 @@ import PropTypes from "prop-types";
 import Link from "gatsby-link";
 
 const Item = props => {
-  const { theme, item: { label, to, icon: Icon } = {}, onClick } = props;
+  const { theme, item: { label, to, icon: Icon, external } = {}, onClick } = props;
+  let linkJsx = (
+    <Link
+      to={to}
+      className={"hiddenItem" in props ? "inHiddenItem" : ""}
+      onClick={onClick}
+      data-slug={to}
+    >
+      {Icon && <Icon />} {label}
+    </Link>
+  );
+  if (external) {
+    linkJsx = (
+      <a target="_blank" href={to} rel="noopener noreferrer">
+        {Icon && <Icon size={20} />} {label}
+      </a>
+    );
+  }
 
   return (
     <React.Fragment>
       <li className={"hiddenItem" in props ? "hiddenItem" : "item"} key={label}>
-        <Link
-          to={to}
-          className={"hiddenItem" in props ? "inHiddenItem" : ""}
-          onClick={onClick}
-          data-slug={to}
-        >
-          {Icon && <Icon />} {label}
-        </Link>
+        {linkJsx}
       </li>
 
       {/* --- STYLES --- */}

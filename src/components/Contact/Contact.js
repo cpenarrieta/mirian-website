@@ -83,7 +83,7 @@ const Contact = props => {
                       type: "email"
                     }
                   ]
-                })(<Input name="email"/>)}
+                })(<Input name="email" />)}
               </FormItem>
               <FormItem label="Message">
                 {getFieldDecorator("message", {

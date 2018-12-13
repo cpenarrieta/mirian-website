@@ -5,6 +5,9 @@ require("core-js/fn/array/from");
 import FaHome from "react-icons/lib/fa/home";
 import FaEnvelope from "react-icons/lib/fa/envelope";
 import FaTag from "react-icons/lib/fa/tag";
+import TiSocialFacebook from "react-icons/lib/ti/social-facebook";
+import TiSocialTwitter from "react-icons/lib/ti/social-twitter";
+import TiSocialInstagram from "react-icons/lib/ti/social-instagram";
 
 import Item from "./Item";
 import Expand from "./Expand";
@@ -23,9 +26,20 @@ class Menu extends React.Component {
 
     this.items = [
       { to: "/", label: "Home", icon: FaHome },
-      { to: "/category/", label: "Categories", icon: FaTag },
+      // { to: "/category/", label: "Categories", icon: FaTag },
       ...pages,
-      { to: "/contact/", label: "Contact", icon: FaEnvelope }
+      { to: "/contact/", label: "Contact", icon: FaEnvelope },
+      {
+        to: "https://www.facebook.com/mirian.oriarodriguez",
+        icon: TiSocialFacebook,
+        external: true
+      },
+      { to: "https://twitter.com/mirian_or", icon: TiSocialTwitter, external: true },
+      {
+        to: "https://www.instagram.com/mirianoriarodriguez/",
+        icon: TiSocialInstagram,
+        external: true
+      }
     ];
 
     this.renderedItems = []; // will contain references to rendered DOM elements of menu
