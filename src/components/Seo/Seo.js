@@ -4,7 +4,7 @@ import Helmet from "react-helmet";
 import config from "../../../content/meta/config";
 
 const Seo = props => {
-  const { data, facebook } = props;
+  const { data, facebook, imageOverwrite } = props;
   const postTitle = ((data || {}).frontmatter || {}).title;
   const postDescription = ((data || {}).frontmatter || {}).description;
   const postCover = ((data || {}).frontmatter || {}).cover;
@@ -12,7 +12,7 @@ const Seo = props => {
 
   const title = postTitle ? `${postTitle} - ${config.shortSiteTitle}` : config.siteTitle;
   const description = postDescription ? postDescription : config.siteDescription;
-  const image = postCover ? postCover : config.siteImage;
+  const image = imageOverwrite;
   const url = config.siteUrl + config.pathPrefix + postSlug;
 
   return (
@@ -44,7 +44,8 @@ const Seo = props => {
 
 Seo.propTypes = {
   data: PropTypes.object,
-  facebook: PropTypes.object.isRequired
+  facebook: PropTypes.object.isRequired,
+  imageOverwrite: PropTypes.string
 };
 
 export default Seo;

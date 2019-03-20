@@ -37,7 +37,7 @@ const PostTemplate = props => {
         )}
       </ThemeContext.Consumer>
 
-      <Seo data={post} facebook={facebook} />
+      <Seo data={post} facebook={facebook} imageOverwrite={`/assets/${post.fields.date}.jpeg`} />
     </React.Fragment>
   );
 };
