@@ -36,7 +36,7 @@ class Menu extends React.Component {
       },
       { to: "https://twitter.com/mirian_or", icon: TiSocialTwitter, external: true },
       {
-        to: "https://www.instagram.com/mirianoriarodriguez/",
+        to: "https://www.instagram.com/mom.broken.code/",
         icon: TiSocialInstagram,
         external: true
       }
