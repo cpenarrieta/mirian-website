@@ -11,15 +11,15 @@ Esta Semana Santa he estado pensando mucho en mi historia. Cómo todo se ha conf
 
 A finales del 2016 estaba en un lugar totalmente diferente en el que me encuentro hoy, con mucha tristeza por todos los cambios en mi vida: estaba por mudarme de país, dejando todo lo construido para empezar de nuevo y encima embarazada. Recordaba esos momentos escuchando una canción de Pablo Martinez: 
 
-_Qué trama mi Señor con tan enloquecedor silencio; _
+_Qué trama mi Señor con tan enloquecedor silencio;_
 
-_qué trama, mi Señor, es la que estás entretejiendo. _
+_qué trama, mi Señor, es la que estás entretejiendo._
 
-_Tus modos son extraños, pero tan perfectos. _
+_Tus modos son extraños, pero tan perfectos._
 
 _Esa eterna costumbre de tus sendas misteriosas, _
 
-_pero impregnadas de Pascua; sí, de Pascua. _
+_pero impregnadas de Pascua; sí, de Pascua._
 
 Ahora escucho de nuevo esta canción y me sorprende el viaje que he vivido. Cuando lo hago me es inevitable pensar en el inicio:
 
